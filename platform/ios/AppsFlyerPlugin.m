@@ -85,8 +85,8 @@
 
 -(void) reportConversionData:(NSString *)data {
     
-    NSString* jsString = [NSString stringWithFormat:@"javascript:window.plugins.appsFlyer.onInstallConversionDataLoaded(%@)", data];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    NSString *js = [NSString stringWithFormat:@"window.plugins.appsFlyer.onInstallConversionDataLoaded(%@)", data];
+    [self.commandDelegate evalJs:js];
 
 }
 
